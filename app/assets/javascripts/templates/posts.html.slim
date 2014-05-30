@@ -1,0 +1,22 @@
+.container ng-init="init()"
+	.col-sm-10
+		h1 Content 1
+		table.table.table-condensed
+			thead
+				tr
+					th #
+					th Active
+					th Name
+					th Description
+					th Registered
+					th Action
+			tbody
+				tr ng-repeat="p in posts"
+					td ng-bind="p.id" 
+					td
+						input type="checkbox" ng-checked="p.active" ng-model="p.active" ng-change="updatePost(p)"
+					td ng-bind="p.name" 
+					td ng-bind="p.created_at" 
+					td ng-bind="p.description" 
+					td
+						a.btn.btn-danger.btn-sm ng-click="deletePost(p)" Delete

@@ -1,0 +1,26 @@
+.container ng-init="init()"
+	.col-sm-10
+		h2 Content1
+		table.table.table-condensed
+			thead
+				tr
+					th #
+					th Active
+					th Name
+					th Registered
+					th Description
+			tbody
+				tr ng-repeat="p in posts"
+					td ng-bind="p.id" 
+					td
+						input type="checkbox" ng-checked="p.active" ng-model="p.active" ng-change="updatePost(p)"
+					td ng-bind="p.name" 
+					td ng-bind="p.created_at" 
+					td
+						select.form-control.input-sm name="category" ng-model="p.category" ng-change="updatePost(p)"
+						  option disabled="" selected="" 
+						    | -- Select Category --
+						  option ng-repeat=("category in categories") 
+						    | {{category}}
+
+					td ng-bind="p.description" 
