@@ -4,7 +4,7 @@ Angularjs Test
 This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
 provided by the [RailsApps Project](http://railsapps.github.io/).
 
-###Install:
+##Install:
     $ cp config/database.example.yml config/database.yml
     $ bundle install
     $ rake db:migrate
@@ -12,32 +12,6 @@ provided by the [RailsApps Project](http://railsapps.github.io/).
     $ rails s
     
     localhost:3000
-
-Preferences:
-
-* git: true
-* apps4: rails-bootstrap
-* authentication: false
-* authorization: false
-* better_errors: true
-* database: default
-* deployment: none
-* devise_modules: false
-* email: none
-* form_builder: false
-* frontend: bootstrap3
-* local_env_file: false
-* pry: false
-* quiet_assets: true
-* starter_app: false
-* dev_webserver: thin
-* prod_webserver: thin
-* templates: slim
-* tests: none
-* rvmrc: true
-* ban_spiders: true
-* jsruntime: true
-* github: true
 
 Ruby on Rails
 ---
