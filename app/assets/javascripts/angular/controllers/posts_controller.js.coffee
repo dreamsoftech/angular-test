@@ -21,7 +21,7 @@ angular.module("testApp").controller "PostCtrl", ($scope, $timeout, $routeParams
   # DELETE api/posts/:id
   $scope.deletePost = (post) ->
     @postFactory.destroy post
-    $scope.posts.splice post.id, 1
+    $scope.posts.splice $scope.posts.indexOf(post), 1
 
   # CREATE api/posts/:id
   $scope.getPost = (post) ->
