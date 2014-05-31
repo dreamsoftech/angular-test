@@ -15,6 +15,15 @@ class Api::PostsController < ApplicationController
     render json: service, status: 200
   end
 
+  def create
+    @post = Post.new(safe_params)
+    if @post.save
+      render json: @post, status: 201
+    else
+      render json: {error: @post.errors}, status: :unprocessable_entity
+    end
+  end
+
   def update
     service.update_attributes(safe_params)
 

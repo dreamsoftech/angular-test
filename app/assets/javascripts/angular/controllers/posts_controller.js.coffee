@@ -1,5 +1,7 @@
 angular.module("testApp").controller "PostCtrl", ($scope, $timeout, $routeParams, Post) ->
   $scope.posts = []
+  $scope.post = {}
+
   $scope.categories =
     business: "Business"
     education: "Education"
@@ -29,6 +31,15 @@ angular.module("testApp").controller "PostCtrl", ($scope, $timeout, $routeParams
   # PUT api/posts/:id
   $scope.updatePost = (post) ->
     @postFactory.update post
+
+  $scope.createPost = ->
+    $scope.post = @postFactory.create $scope.post
+  
+  $scope.update = ->
+    if !$scope.post.id
+      $scope.createPost()
+    else
+      $scope.updatePost($scope.post)
 
   serviceErrorHandler = ->
       alert("Error")

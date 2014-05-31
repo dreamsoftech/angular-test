@@ -15,8 +15,8 @@ angular.module("testApp").factory "Post", ($resource, $http) ->
       return
     
     Post::create = (attrs) ->
-      new @service(Post: attrs).$save ((Post) ->
-        attrs.id = Post.id
+      new @service(post: attrs).$save ((post) ->
+        attrs.id = post.id
       ), @errorHandler
       attrs
 

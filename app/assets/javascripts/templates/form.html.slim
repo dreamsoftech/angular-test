@@ -1,3 +1,6 @@
-.container
-	h2 Form - Auto Save
-	p Looking forward to client's reply.
+.container ng-init="init()"
+  h2 Form - Auto Save
+  .row
+    .col-sm-4
+      label Name
+      input.form-control type="text" name="name" ng-model="post.name" ng-change="update()" autosave=""
