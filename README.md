@@ -4,48 +4,14 @@ Angularjs Test
 This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
 provided by the [RailsApps Project](http://railsapps.github.io/).
 
-Diagnostics
--
-
-This application was built with recipes that are NOT known to work together.
-
-This application was built with preferences that are NOT known to work
-together.
-
-If the application doesn’t work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include these diagnostics:
-
-We’d also like to know if you’ve found combinations of recipes or
-preferences that do work together.
-
-Recipes:
-
-* controllers
-* core
-* deployment
-* email
-* extras
-* frontend
-* gems
-* git
-* init
-* learn_rails
-* models
-* prelaunch
-* rails_bootstrap
-* rails_devise
-* rails_devise_pundit
-* rails_foundation
-* rails_omniauth
-* rails_signup_download
-* railsapps
-* readme
-* routes
-* saas
-* setup
-* testing
-* tests4
-* views
+###Install:
+    $ cp config/database.example.yml config/database.yml
+    $ bundle install
+    $ rake db:migrate
+    $ rake db:seed
+    $ rails s
+    
+    localhost:3000
 
 Preferences:
 
