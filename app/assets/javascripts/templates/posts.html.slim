@@ -19,4 +19,35 @@
 					td ng-bind="p.created_at" 
 					td ng-bind="p.description" 
 					td
+						a.btn.btn-primary.btn-sm ng-click="editPost(p)" Edit
 						a.btn.btn-danger.btn-sm ng-click="deletePost(p)" Delete
+
+#edit-post.modal.fade role="dialog" 
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4 
+        	| Edit post
+        	a.close data-dismiss="modal" type="button"  &times;
+
+      .modal-body
+        .clearfix
+          label.col-md-3.control-label Name
+          .col-md-9
+            input.form-control type="text" autofocus="autofocus" placeholder="Input post name" ng-model="post.name"
+        .clearfix
+          label.col-md-3.control-label Active
+          .col-md-9
+            input type="checkbox" ng-model="post.active"
+        .clearfix
+          label.col-md-3.control-label Category
+          .col-md-9
+            select.form-control.input-sm name="category" ng-model="post.category"
+						  option ng-repeat=("category in categories") 
+						    | {{category}}
+        .clearfix
+          label.col-md-3.control-label Description
+          .col-md-9
+            input.form-control type="text" placeholder="Input description" ng-model="post.description"
+      .modal-footer
+        a.btn.btn-primary type="button" ng-click="updatePlace(post)" data-dismiss="modal" Update

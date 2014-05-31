@@ -19,8 +19,6 @@
 					td ng-bind="p.created_at" 
 					td
 						select.form-control.input-sm name="category" ng-model="p.category" ng-change="updatePost(p)"
-						  option disabled="" selected="" 
-						    | -- Select Category --
 						  option ng-repeat=("category in categories") 
 						    | {{category}}
 

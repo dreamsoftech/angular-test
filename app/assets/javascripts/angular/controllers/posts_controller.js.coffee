@@ -35,6 +35,14 @@ angular.module("testApp").controller "PostCtrl", ($scope, $timeout, $routeParams
   $scope.createPost = ->
     $scope.post = @postFactory.create $scope.post
   
+  # show edit post modal dialog
+  # when user clicks the edit button in list page, trigger this action
+  $scope.editPost = (post) ->
+    $scope.post = post
+    $("#edit-post").modal("show")
+    return
+
+
   $scope.update = ->
     if !$scope.post.id
       $scope.createPost()
